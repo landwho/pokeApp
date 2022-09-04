@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.center{ text-align: center;}
+.right{ text-align: right;}
+.left{ text-align: left;}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@media only screen and (max-width: 600px) {
+    .card {
+      width: 100% !important;
+    }
+    .box{max-height: 650px !important;}
+    #box-settings{max-height: 440px !important;}
+    input[type="date"]:not(.has-value):before{
+        content: attr(placeholder);
+      }
+  }

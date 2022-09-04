@@ -1,0 +1,74 @@
+h3{
+    color: #185A7D;
+}
+h2{
+    color: #185A7D;
+    font-family: 'Poppins';
+    font-style: normal;
+}
+p{ color: #AAAAAA;}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+.card{
+    background: #00693C;
+    border-radius: 50px;
+}
+.card-title{
+    color: white;
+    font-family: 'Poppins';
+    font-style: normal;
+}
+.card img{
+    width: 100%;
+    object-fit: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 308px;
+    background-position: center center;
+}
+.base-image{
+    width: 100%;
+    height: 280px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    background-position: center center;
+}
+.pad{padding: 2%;}
+.btn-continue{
+    background: #185A7D;
+    color: white;
+    width: 100%;
+    max-width: 140px;
+}
+
+.gris{ color: #AAAAAA;}
+
+
+
+
+
+/* input file  */
+
+label input[type='file']{ display: none; }
+label span {
+  cursor: pointer;
+  background: #FFFFFF;
+  font: 13pt Tahoma;
+
+  color: #2C85BC;
+
+  border-radius: 4px;
+  padding: 10px 20px;
+
+}
+label span:hover { border-color: #09F; }
+label span:active {
+  background: #2C85BC;
+}
+.error{ color: red;}

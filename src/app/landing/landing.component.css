@@ -1,0 +1,33 @@
+#bg-inicio{
+    background: url(../../assets/home.jpg);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.text{
+    font-weight: 800;
+    color: #fff;
+    -webkit-text-stroke: 0.2vw #2225;
+}
+section span {
+    font-size: 5vw;
+    font-weight: 200;
+    color: #2225;
+    text-transform: uppercase;
+}
+
+.btn-content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+button img{
+    width: 100%;
+    max-width: 200px;
+}
+.button-iniciar{
+    margin-bottom: 2%;
+}

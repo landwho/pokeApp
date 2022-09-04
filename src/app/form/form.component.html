@@ -1,0 +1,110 @@
+<section>
+    <app-navbar></app-navbar>
+    <br>
+
+    <div class="container">
+        <div class="row">
+           
+            <h3><b>¡Hola!</b> Configuremos tu perfil</h3>
+            <p>Queremos conocerte mejor.</p>
+
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <div class="card" style="width: 18rem;">
+                    <br>
+                    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()"></form>
+                    <h5 class="card-title center">Imágen perfil</h5>
+                    <br>
+                    <!-- <img [style.backgroundImage]="'url('+ imageUrl +')'"> -->
+                    <div class="pad">
+                        <div class="base-image" [style.backgroundImage]="'url('+ imageUrl +')'"></div>
+                    </div>
+                    <div class="card-body">
+                      <br>
+                      <div class="center">
+                        <label>
+                            <input type="file" accept=".png, .jpg, .jpeg" #fileInput (change)="uploadFile($event)"/>
+                            <span>Adjunta un foto <i class="fa fa-cloud-upload" aria-hidden="true"></i></span>
+                          </label>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div *ngIf="age=='mayor'" class="col-md-4">
+                <form action="">
+                    <h2> Tu informacion</h2>
+                    <p>Completa la siguiente información para completar tu perfil.</p>
+                    
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Nombre*" [(ngModel)]="name" name="name">
+                    </div>
+
+                    <div class="mb-3">
+                        <select class="form-select" [(ngModel)]="hobbie.select" name="select">
+                            <option value="" selected disabled>Pasatiempo favorito</option>
+                            <option *ngFor="let h of hobbies" value="{{h.name}}"> {{h.name}}</option>
+                          </select>
+                        </div>
+
+                    <div class="mb-3">
+                        <input type="date" class="form-control" [(ngModel)]="date" name="date" placeholder="Fecha*">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Documento*" [(ngModel)]="cui" name="cui">
+                    </div>
+
+
+                    <br>
+                    <div class="center">
+                        <button class="btn btn-continue center" (click)="continue()">Continuar</button>
+                        <p class="error">{{error}}</p>
+                    </div>
+                      
+                </form>
+
+            </div>
+
+            <div *ngIf="age=='menor'" class="col-md-4">
+                <form action="">
+                    <h2> Tu informacion</h2>
+                    <p>Completa la siguiente información para completar tu perfil.</p>
+                    
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Nombre*" [(ngModel)]="name" name="name">
+                    </div>
+
+                    <div class="mb-3">
+                        <select class="form-select" [(ngModel)]="hobbie.select" name="select">
+                            <option value="" selected disabled>Pasatiempo favorito</option>
+                            <option *ngFor="let h of hobbies" value="{{h.name}}"> {{h.name}}</option>
+                          </select>
+                        </div>
+
+                    <div class="mb-3">
+                        <input type="date" class="form-control" [(ngModel)]="date" name="date" placeholder="Fecha*">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Carnet de minoridad*" [(ngModel)]="cui" name="cui" disabled>
+                    </div>
+
+
+                    <br>
+                    <div class="center">
+                        <button class="btn btn-continue center" (click)="continue2()">Continuar</button>
+                        <p class="error">{{error}}</p>
+                    </div>
+                      
+                </form>
+
+            </div>
+
+            <div class="col-md-2"></div>
+
+        </div>
+
+    </div>
+    <br>
+</section>

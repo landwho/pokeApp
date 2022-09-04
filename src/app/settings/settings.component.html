@@ -1,0 +1,91 @@
+<section>
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>¡Ya casi términamos!</h3>
+                        <p>Revisa la información, y completa lo solicitado.</p>
+                        <br>
+                    </div>
+                </div>
+                <div *ngIf="age=='mayor'" class="card" style="width: 18rem;">
+                    <br>
+                    <h5 class="card-title center"> {{user.name}}</h5>
+                    <br>
+                    <div class="pad">
+                        <img class="base-image" [style.backgroundImage]="'url('+ user.file +')'"> 
+                    </div>
+                    <div class="card-body">
+                      <div class="center">
+                        <label>
+                        <span><b>Pasatiempo:</b> {{user.hobbie}}</span>
+                        <br>
+                        <span><b>Edad:</b> {{user.date}}</span>
+                        <br>
+                        <span><b>DUI: </b>{{user.cui}}</span>
+                          </label>
+                      </div>
+                    </div>
+                </div>
+                <div *ngIf="age=='menor'" class="card" style="width: 18rem;">
+                    <br>
+                    <h5 class="card-title center"> {{user.name}}</h5>
+                    <br>
+                    <div class="pad">
+                        <img class="base-image" [style.backgroundImage]="'url('+ user.file +')'"> 
+                    </div>
+                    <div class="card-body">
+                      <div class="center">
+                        <label>
+                            <span><b>Pasatiempo:</b> {{user.hobbie}}</span>
+                            <br>
+                            <span><b>Edad:</b> {{user.date}}</span>
+                        </label>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">  
+                <h2> Pokémon</h2>
+                <p>Selecciona 3 Pokémon para que sean parte de tu equipo</p>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping"><i class="fa fa-search" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="search" [(ngModel)]="searchText" >
+                  </div>
+                <div class="box" id="box-settings">
+                    <div class="row"> 
+                        <div  class="col-6 col-md-4" *ngFor="let p of array | filter:searchText">
+                         
+                            <mat-button-toggle-group name="ingredients" multiple [disabled]="disabled">
+                                <mat-button-toggle value="flour" (click)=" choose(p.id, p.name, p.image, p.stats, p.types)">
+                                    <div class="pImage">
+                                        <img src="{{p.image}}" alt="">
+                                        <p><b>###{{p.id}}</b> <b>{{p.name}}</b></p>
+                                    </div>
+                                </mat-button-toggle>
+                              </mat-button-toggle-group>
+
+
+                            <!-- <div class="pImage">
+                                <img src="{{p.image}}" alt="">
+                                <p><b>###{{p.id}}</b> <b>{{p.name}}</b></p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="center">
+                    <button class="btn btn-continue center" (click)="save()" [ngClass]=" flag ? 'primary' : 'secondary'">Guardar</button>
+                    <p class="error">{{error}}</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <br>
+</section>
