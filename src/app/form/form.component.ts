@@ -85,11 +85,15 @@ export class FormComponent implements OnInit {
   }
 
   continue2(){
-  
+    let d = new Date(this.date);
+    let currentDate = Number(new Date().getFullYear());
+    let ser = Number(d.getFullYear());
+    let myAge = currentDate - ser
+    
     this.obj= {
       "name":this.name,
       "hobbie":this.hobbie.select,
-      "date":this.date,
+      "date":myAge,
       "file":this.registrationForm.value.file
     }
      
